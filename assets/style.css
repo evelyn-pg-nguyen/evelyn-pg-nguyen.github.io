@@ -248,3 +248,13 @@ footer .wrap{padding-block:28px 32px;color:var(--muted);font-size:var(--fs-meta)
 .degree-documents{min-width:0}
 .degree-dialog-head>.close{flex-shrink:0}
 @media(max-width:600px){.dashboard-dialog .dashboard-frame{min-height:260px}}
+
+/* Homepage portrait beside the introduction, with a stacked mobile layout. */
+.hero .hero-with-portrait{display:grid;grid-template-columns:minmax(260px,.8fr) minmax(0,1.5fr);align-items:center;gap:64px;padding-block:64px 72px;text-align:left}
+.hero-portrait img{display:block;width:100%;height:auto;border-radius:6px}
+.hero-content{min-width:0}
+.hero-content h1{font-size:clamp(32px,3.7vw,48px);letter-spacing:.035em;line-height:1.15;margin-bottom:24px}
+.hero .hero-content .intro{max-width:none;margin:0}
+.hero-content .cv-download{margin-top:28px}
+@media(max-width:900px){.hero .hero-with-portrait{grid-template-columns:minmax(220px,.7fr) minmax(0,1fr);gap:32px}.hero-content h1{font-size:34px}}
+@media(max-width:700px){.hero .hero-with-portrait{grid-template-columns:1fr;gap:32px;padding-block:36px 48px}.hero-portrait{width:min(76%,320px);margin:auto}.hero-content .label,.hero-content h1{text-align:center}.hero-content h1{font-size:clamp(30px,7vw,40px)}}
