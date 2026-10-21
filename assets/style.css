@@ -193,3 +193,20 @@ footer .wrap{padding-block:28px 32px;color:var(--muted);font-size:var(--fs-meta)
 .preview-help{font-size:var(--fs-meta);color:var(--muted);margin:12px 0 0}
 @media(max-width:900px){.degree-dialog-grid{grid-template-columns:1fr;gap:32px;padding:20px}.degree-dialog-head{padding:20px}}
 @media(max-width:480px){.degree-dialog-head{padding:16px;gap:10px}.degree-dialog-head h2{font-size:27px}.degree-dialog-head .close{padding:8px 14px}.degree-dialog-grid{padding:16px}.document-preview{height:460px}}
+
+/* Credentials use original issuer logos in square, uncropped frames. */
+.credential-list{list-style:none;padding:0;margin:26px 0 0}
+.credential-card{display:grid;grid-template-columns:96px minmax(0,1fr);gap:28px;padding:32px 0;border-top:1px solid var(--line)}
+.credential-card:last-child{border-bottom:1px solid var(--line)}
+.credential-logo{display:block;width:96px;height:96px;aspect-ratio:1;object-fit:contain;background:#fff;border:1px solid var(--line);border-radius:4px;padding:6px;flex:none}
+.credential-summary h3{font-size:clamp(24px,2.5vw,32px);line-height:1.25;margin:0 0 10px}
+.credential-summary .school{margin:0;color:var(--muted)}
+.credential-meta,.credential-related{margin:8px 0 16px;color:var(--muted);font-size:var(--fs-meta)}
+.credential-heading{display:flex;gap:20px;align-items:flex-start;min-width:0}
+.credential-heading .credential-logo{width:80px;height:80px}
+.credential-heading .credential-meta{margin-bottom:0}
+.credential-heading h2{font-size:clamp(24px,3vw,36px)}
+.official-record{padding:22px;background:var(--surface);border:1px solid var(--line);border-radius:4px;margin-top:28px}
+.official-record h3{font-size:23px}.official-record ul{padding-left:20px;margin-bottom:0}.official-record a{overflow-wrap:anywhere;text-underline-offset:3px}
+.degree-story .story-credential-title{margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+@media(max-width:600px){.credential-card{grid-template-columns:72px minmax(0,1fr);gap:18px}.credential-card .credential-logo{width:72px;height:72px}.credential-heading{flex-direction:column;gap:14px}.credential-heading .credential-logo{width:64px;height:64px}.official-record{padding:16px}}
