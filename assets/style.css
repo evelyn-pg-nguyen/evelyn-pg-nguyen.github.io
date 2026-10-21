@@ -241,3 +241,10 @@ footer .wrap{padding-block:28px 32px;color:var(--muted);font-size:var(--fs-meta)
 .case-card .frame>img{object-fit:contain;background:var(--surface)}
 @media(max-width:900px){.case-dialog .case-layout{grid-template-columns:1fr;gap:32px;padding:20px}.case-dialog .case-dialog-head{padding:20px}}
 @media(max-width:480px){.case-dialog .case-dialog-head{padding:16px;gap:12px}.case-dialog .case-layout{padding:16px}.case-dialog-head h2{font-size:25px}.case-dialog-head>.close{padding:8px 14px}.case-resources .case-section:not(.case-demo){padding:16px}}
+
+/* Dashboard stories share the certificate and automation layout. */
+.dashboard-dialog .dashboard-frame{aspect-ratio:16/10;min-height:340px}
+.dashboard-dialog .data-note{display:inline-block;padding:7px 10px;border-radius:4px;font-size:var(--fs-meta);background:var(--bg)}
+.degree-documents{min-width:0}
+.degree-dialog-head>.close{flex-shrink:0}
+@media(max-width:600px){.dashboard-dialog .dashboard-frame{min-height:260px}}

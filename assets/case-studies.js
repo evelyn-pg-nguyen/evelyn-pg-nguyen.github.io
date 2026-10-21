@@ -1,12 +1,12 @@
 // Native dialogs keep keyboard focus within the active case study.
 document.querySelectorAll('[data-case-open]').forEach(opener => {
   const dialog = document.getElementById(opener.dataset.caseOpen);
-  const videos = [...dialog.querySelectorAll('[data-video-src]')];
+  const videos = [...dialog.querySelectorAll('[data-video-src], [data-embed-src]')];
   opener.addEventListener('click', () => {
     dialog.showModal();
     dialog.scrollTop = 0;
     document.body.classList.add('locked');
-    videos.forEach(video => { video.src = video.dataset.videoSrc; });
+    videos.forEach(video => { video.src = video.dataset.videoSrc || video.dataset.embedSrc; });
   });
   dialog.querySelector('[data-case-close]').addEventListener('click', () => dialog.close());
   dialog.addEventListener('close', () => {
