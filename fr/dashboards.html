@@ -1,0 +1,55 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tableaux de bord · Evelyn Nguyen</title>
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="canonical" href="https://evelyn-pg-nguyen.github.io/fr/dashboards.html"><link rel="alternate" hreflang="en" href="https://evelyn-pg-nguyen.github.io/dashboards.html"><link rel="alternate" hreflang="fr" href="https://evelyn-pg-nguyen.github.io/fr/dashboards.html"></head><body><a class="skip" href="#main">Aller au contenu</a>
+<nav class="nav" aria-label="Navigation principale"><div class="wrap"><a class="brand" href="index.html">Evelyn Phuong Giang Nguyen</a><ul><li><a href="dashboards.html" aria-current="page">Tableaux de bord</a></li><li><a href="modeling.html">Modélisation</a></li><li><a href="ai-automation.html">Automatisation &amp; IA</a></li><li><a href="degrees.html">Diplômes &amp; certifications</a></li></ul><div class="language" aria-label="Langue"><a href="../dashboards.html" lang="en" hreflang="en" aria-label="English">EN</a><a href="dashboards.html" lang="fr" hreflang="fr" aria-label="Français" aria-current="true">FR</a></div></div></nav><header class="page-head"><div class="wrap"><a class="back" href="index.html">← Accueil</a>
+  <p class="label">01 · Portfolio d’Evelyn</p><h1>Tableaux de bord</h1><p class="lead">Des rapports Power BI interactifs. Ouvrez un projet pour explorer le rapport, sa problématique, ma démarche et les principaux enseignements.</p></div></header>
+<main class="page" id="main"><div class="wrap"><div class="projects" id="projects"></div><div class="next"><span class="label">À découvrir</span><a href="modeling.html">Modélisation →</a></div></div></main>
+<div class="viewer" id="viewer" hidden></div>
+<section class="talk" id="contact"><div class="wrap"><div class="contact">
+  <div><h2>Échangeons</h2><p>Une question sur mon travail ? Contactez-moi.</p></div>
+  <div class="links">
+    <div class="link"><span class="lbl">E-mail</span><span class="val" id="email">phuonggiangnguyen96@gmail.com</span><button class="copy" type="button" id="copy-email">Copier</button></div>
+    <div class="link"><span class="lbl">LinkedIn</span><a class="val" href="https://www.linkedin.com/in/phuonggiang/" target="_blank" rel="noopener">linkedin.com/in/phuonggiang</a><span aria-hidden="true">↗</span></div>
+    <div class="link"><span class="lbl">Substack</span><a class="val" href="https://evelynpgnguyen.substack.com" target="_blank" rel="noopener">evelynpgnguyen.substack.com</a><span aria-hidden="true">↗</span></div>
+  </div></div></div></section>
+<footer><div class="wrap">Evelyn Phuong Giang Nguyen · Portfolio FP&amp;A</div></footer>
+<script>
+const PROJECTS=[{"tag": "Ventes & rentabilité · Power BI", "title": "Tableau de bord d’analyse financière", "summary": "Ventes, fiabilité des prévisions, marge bénéficiaire et impact des remises par mois et par produit, avec des filtres par année, segment et pays.", "problem": "Les ventes sont-elles conformes aux prévisions ? Quels produits et quels mois contribuent au bénéfice, et où les remises réduisent-elles les marges ?", "approach": "Une page Vue d’ensemble présente les ventes brutes, les ventes prévues, la fiabilité des prévisions, la marge et l’impact des remises. Un graphique mensuel permet de basculer entre trois ratios, tandis qu’un autre compare les ventes aux prévisions et affiche les écarts. Une page Détail réunit une matrice des ventes par produit et par mois, un nuage de points croisant l’impact des remises et le coût des ventes, un graphique de répartition des ventes et un tableau par produit avec les écarts aux prévisions, le coût des ventes et la marge.", "stack": ["Mesures DAX", "Prévisions vs réalisé", "Analyse des marges", "Filtres interactifs"], "image": "../assets/dashboards-0.jpg", "insights": ["Les ventes brutes atteignent 92,31 M$ pour une prévision de 94,79 M$, soit 97,4 % de l’objectif et un écart d’environ 2,5 M$.", "Les ventes sont inférieures aux prévisions pendant 8 mois sur 12. L’écart le plus important est enregistré en décembre : −0,9 M$.", "Octobre (12,4 M$) et décembre (12,0 M$) sont les mois les plus forts, avec des ventes plus de deux fois supérieures à celles de novembre (5,4 M$).", "Paseo est le premier produit en volume de ventes : 27,10 M$ (29,35 % du total). Il affiche cependant la marge la plus faible (13,65 %) et le plus grand écart aux prévisions (−1,3 M$).", "VTT présente le plus faible impact des remises (6,4 %). Seuls VTT et Velo dépassent leurs prévisions de ventes.", "Montana affiche la marge la plus élevée : 14,52 %. Le bénéfice total est de 13,02 M$, soit 14,10 % des ventes, pour un coût des ventes de 85,9 %."], "embedUrl": "https://app.powerbi.com/view?r=eyJrIjoiOTBkMmEyMWEtODEwNS00ZGU2LWE1NDMtNTZhNjhhYTUyOWQ5IiwidCI6ImNiNDg0NDZlLTkwZTYtNGJmMS04MjViLTQwZTQ4ZmNjOWZmNiJ9&pageName=0060476b8429b5a284e0", "liveUrl": ""}];
+const HOSTED=true;
+const e=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+function frame(p,live){
+  if(live&&HOSTED&&p.video)return `<iframe title="${e(p.title)}" src="https://www.youtube-nocookie.com/embed/${e(p.video)}" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+  if(live&&HOSTED&&p.embedUrl)return `<iframe title="${e(p.title)}" src="${e(p.embedUrl)}" loading="lazy" allowfullscreen></iframe>`;
+  let h=`<img src="${p.image}" alt="${p.video?"Aperçu vidéo":"Première page"} : ${e(p.title)}">`;
+  if(p.video)h+=`<span class="play" aria-hidden="true"></span>`;
+  if(live&&(p.video||p.embedUrl))h+=`<span class="note">${p.video?"Video plays":"Interactive report loads"} on the hosted site</span>`;
+  return h;
+}
+const chips=p=>p.stack.length?`<div class="chips">${p.stack.map(s=>`<span>${e(s)}</span>`).join("")}</div>`:"";
+document.getElementById("projects").innerHTML=PROJECTS.map((p,i)=>`<article class="card" tabindex="0" data-i="${i}">
+  <div class="frame">${frame(p,false)}</div>
+  <div class="card-body"><p class="label">${e(p.tag)}</p><h3>${e(p.title)}</h3><p class="sum">${e(p.summary)}</p>${chips(p)}
+  <div class="card-foot"><button class="btn" type="button">${p.video?"Voir la démo":"Voir le tableau de bord"}</button></div></div></article>`).join("");
+function sheet(p){return `<div class="sheet" role="dialog" aria-modal="true" aria-labelledby="viewer-title">
+  <div class="sheet-head"><div><p class="label">${e(p.tag)}</p><h3 id="viewer-title">${e(p.title)}</h3></div><button class="close" type="button" id="viewer-close">Fermer</button></div>
+  <div class="frame">${frame(p,true)}</div>
+  <div class="notes"><div><p>${e(p.summary)}</p>${p.liveUrl||p.embedUrl?`<a class="open" href="${e(p.liveUrl||p.embedUrl)}" target="_blank" rel="noopener">${p.video?"Voir sur YouTube ↗":"Ouvrir en plein écran ↗"}</a>`:""}</div>
+  <div><dl>${p.problem?`<div><dt>Problématique</dt><dd>${e(p.problem)}</dd></div>`:""}${p.approach?`<div><dt>Ma réalisation</dt><dd>${e(p.approach)}</dd></div>`:""}</dl></div>
+  <div>${chips(p)}</div></div>
+  ${p.insights.length?`<div class="insights"><p class="label">Principaux enseignements</p><ul>${p.insights.map(t=>`<li>${e(t)}</li>`).join("")}</ul></div>`:""}</div>`;}
+const viewer=document.getElementById("viewer");let last=null;
+function openP(i){last=document.activeElement;viewer.innerHTML=sheet(PROJECTS[i]);viewer.hidden=false;Array.from(document.body.children).forEach(el=>{if(el!==viewer&&el.tagName!=="SCRIPT")el.inert=true;});document.body.classList.add("locked");document.getElementById("viewer-close").focus();}
+function closeP(){viewer.hidden=true;Array.from(document.body.children).forEach(el=>el.inert=false);viewer.innerHTML="";document.body.classList.remove("locked");if(last)last.focus();}
+const list=document.getElementById("projects");
+list.addEventListener("click",ev=>{const c=ev.target.closest(".card");if(c)openP(+c.dataset.i);});
+list.addEventListener("keydown",ev=>{const c=ev.target.closest(".card");if(c&&(ev.key==="Enter"||ev.key===" ")&&ev.target===c){ev.preventDefault();openP(+c.dataset.i);}});
+viewer.addEventListener("click",ev=>{if(ev.target===viewer||ev.target.id==="viewer-close")closeP();});
+document.addEventListener("keydown",ev=>{if(ev.key==="Tab"&&!viewer.hidden){const items=[...viewer.querySelectorAll('button,a[href],iframe,[tabindex="0"]')];const first=items[0],end=items[items.length-1];if(ev.shiftKey&&document.activeElement===first){ev.preventDefault();end.focus();}else if(!ev.shiftKey&&document.activeElement===end){ev.preventDefault();first.focus();}}if(ev.key==="Escape"&&!viewer.hidden)closeP();});
+const cb=document.getElementById("copy-email");
+if(cb)cb.addEventListener("click",()=>{const el=document.getElementById("email");
+const sel=()=>{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);cb.textContent="Sélectionné";};
+try{navigator.clipboard.writeText(el.textContent).then(()=>cb.textContent="Copié",sel);}catch(_){sel();}
+setTimeout(()=>cb.textContent="Copier",1600);});
+</script>
+</body></html>
