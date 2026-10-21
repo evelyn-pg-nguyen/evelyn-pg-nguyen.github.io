@@ -9,9 +9,6 @@ document.querySelectorAll('[data-case-open]').forEach(opener => {
     videos.forEach(video => { video.src = video.dataset.videoSrc; });
   });
   dialog.querySelector('[data-case-close]').addEventListener('click', () => dialog.close());
-  dialog.querySelector('[data-case-demo]').addEventListener('click', () => {
-    dialog.querySelector('.case-demo').scrollIntoView({behavior: 'auto', block: 'start'});
-  });
   dialog.addEventListener('close', () => {
     videos.forEach(video => video.removeAttribute('src'));
     document.body.classList.remove('locked');

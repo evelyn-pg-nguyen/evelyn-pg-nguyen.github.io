@@ -226,3 +226,18 @@ footer .wrap{padding-block:28px 32px;color:var(--muted);font-size:var(--fs-meta)
 @media(max-width:600px){.case-dialog-head{padding:16px;gap:12px}.case-dialog-head .label{font-size:11px;letter-spacing:.06em}.case-dialog-head .close{padding:8px 14px}.case-content{padding:22px 18px 30px}.case-quick-links{gap:8px}.case-quick-links .btn{padding:9px 14px}.case-section h3{font-size:25px}.case-demo{scroll-margin-top:210px}}
 
 .cohort-cover{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:clamp(20px,4vw,42px);background:var(--surface);color:var(--accent);gap:14px}.cohort-cover strong{font:400 clamp(28px,3vw,42px)/1.2 var(--f-display);color:var(--ink)}.cohort-cover>span:last-child{font-size:var(--fs-meta)}.cohort-cover .label{margin:0}
+
+/* Match certificate dialogs: text left, demo and files right. */
+.case-dialog{max-width:1240px;border:0;outline:none;border-radius:8px;box-shadow:0 24px 70px rgba(62,52,46,.22)}
+.case-dialog .case-dialog-head{display:flex;position:sticky;top:0;align-items:flex-start;justify-content:space-between;gap:24px;padding:24px 28px;z-index:2}
+.case-dialog-head>div{min-width:0;flex:1}.case-dialog-head>.close{flex:0 0 auto;margin:0;align-self:flex-start;min-height:44px}
+.case-dialog .case-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:36px;padding:28px}
+.case-information,.case-resources{min-width:0}.case-resources{align-self:start}
+.case-resources .case-demo{margin:0;padding:0;border:0;scroll-margin-top:0}
+.case-dialog .case-section h3{font-size:24px}.case-dialog .case-section+.case-section{border:0;padding-top:0;margin-top:28px}
+.case-resources .frame{border:0;background:var(--surface);border-radius:6px}
+.case-resources .case-section:not(.case-demo){padding:22px;background:var(--surface);border-radius:6px}
+.case-resources .btn{max-width:100%;white-space:normal;text-align:center}
+.case-card .frame>img{object-fit:contain;background:var(--surface)}
+@media(max-width:900px){.case-dialog .case-layout{grid-template-columns:1fr;gap:32px;padding:20px}.case-dialog .case-dialog-head{padding:20px}}
+@media(max-width:480px){.case-dialog .case-dialog-head{padding:16px;gap:12px}.case-dialog .case-layout{padding:16px}.case-dialog-head h2{font-size:25px}.case-dialog-head>.close{padding:8px 14px}.case-resources .case-section:not(.case-demo){padding:16px}}
