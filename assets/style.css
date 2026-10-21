@@ -224,3 +224,5 @@ footer .wrap{padding-block:28px 32px;color:var(--muted);font-size:var(--fs-meta)
 .case-section ul{padding-left:24px;margin:10px 0 18px;color:var(--muted)}.case-section li{padding-left:3px;margin:7px 0}.case-section li::marker{color:var(--accent)}
 .case-demo{scroll-margin-top:180px}.case-demo .frame{margin-bottom:18px}.case-card{cursor:default}
 @media(max-width:600px){.case-dialog-head{padding:16px;gap:12px}.case-dialog-head .label{font-size:11px;letter-spacing:.06em}.case-dialog-head .close{padding:8px 14px}.case-content{padding:22px 18px 30px}.case-quick-links{gap:8px}.case-quick-links .btn{padding:9px 14px}.case-section h3{font-size:25px}.case-demo{scroll-margin-top:210px}}
+
+.cohort-cover{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:clamp(20px,4vw,42px);background:var(--surface);color:var(--accent);gap:14px}.cohort-cover strong{font:400 clamp(28px,3vw,42px)/1.2 var(--f-display);color:var(--ink)}.cohort-cover>span:last-child{font-size:var(--fs-meta)}.cohort-cover .label{margin:0}
