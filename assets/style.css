@@ -210,3 +210,5 @@ footer .wrap{padding-block:28px 32px;color:var(--muted);font-size:var(--fs-meta)
 .official-record h3{font-size:23px}.official-record ul{padding-left:20px;margin-bottom:0}.official-record a{overflow-wrap:anywhere;text-underline-offset:3px}
 .degree-story .story-credential-title{margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--line)}
 @media(max-width:600px){.credential-card{grid-template-columns:72px minmax(0,1fr);gap:18px}.credential-card .credential-logo{width:72px;height:72px}.credential-heading{flex-direction:column;gap:14px}.credential-heading .credential-logo{width:64px;height:64px}.official-record{padding:16px}}
+
+.degree-story section p+p{margin-top:14px}
