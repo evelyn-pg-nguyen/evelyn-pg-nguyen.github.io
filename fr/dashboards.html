@@ -2,9 +2,9 @@
 <title>Tableaux de bord · Evelyn Nguyen</title>
 <link rel="stylesheet" href="../assets/style.css">
 <link rel="canonical" href="https://evelyn-pg-nguyen.github.io/fr/dashboards.html"><link rel="alternate" hreflang="en" href="https://evelyn-pg-nguyen.github.io/dashboards.html"><link rel="alternate" hreflang="fr" href="https://evelyn-pg-nguyen.github.io/fr/dashboards.html"></head><body><a class="skip" href="#main">Aller au contenu</a>
-<nav class="nav" aria-label="Navigation principale"><div class="wrap"><a class="brand" href="index.html">Evelyn Phuong Giang Nguyen</a><ul><li><a href="dashboards.html" aria-current="page">Tableaux de bord</a></li><li><a href="modeling.html">Modélisation</a></li><li><a href="ai-automation.html">Automatisation &amp; IA</a></li><li><a href="degrees.html">Diplômes &amp; certifications</a></li></ul><div class="language" aria-label="Langue"><a href="../dashboards.html" lang="en" hreflang="en" aria-label="English">EN</a><a href="dashboards.html" lang="fr" hreflang="fr" aria-label="Français" aria-current="true">FR</a></div></div></nav><header class="page-head"><div class="wrap"><a class="back" href="index.html">← Accueil</a>
+<nav class="nav" aria-label="Navigation principale"><div class="wrap"><a class="brand" href="index.html">Evelyn Phuong Giang Nguyen</a><ul><li><a href="dashboards.html" aria-current="page">Tableaux de bord</a></li><li><a href="modeling.html">Modélisation financière</a></li><li><a href="ai-automation.html">IA &amp; automatisation</a></li><li><a href="degrees.html">Diplômes &amp; certifications</a></li></ul><div class="language" aria-label="Langue"><a href="../dashboards.html" lang="en" hreflang="en" aria-label="English">EN</a><a href="dashboards.html" lang="fr" hreflang="fr" aria-label="Français" aria-current="true">FR</a></div></div></nav><header class="page-head"><div class="wrap"><a class="back" href="index.html">← Accueil</a>
   <p class="label">01 · Portfolio d’Evelyn</p><h1>Tableaux de bord</h1><p class="lead">Des rapports Power BI interactifs. Ouvrez un projet pour explorer le rapport, sa problématique, ma démarche et les principaux enseignements.</p></div></header>
-<main class="page" id="main"><div class="wrap"><div class="projects" id="projects"></div><div class="next"><span class="label">À découvrir</span><a href="modeling.html">Modélisation →</a></div></div></main>
+<main class="page" id="main"><div class="wrap"><div class="projects" id="projects"></div><div class="next"><span class="label">À découvrir</span><a href="modeling.html">Modélisation financière →</a></div></div></main>
 <div class="viewer" id="viewer" hidden></div>
 <section class="talk" id="contact"><div class="wrap"><div class="contact">
   <div><h2>Échangeons</h2><p>Une question sur mon travail ? Contactez-moi.</p></div>
@@ -30,10 +30,10 @@ const chips=p=>p.stack.length?`<div class="chips">${p.stack.map(s=>`<span>${e(s)
 document.getElementById("projects").innerHTML=PROJECTS.map((p,i)=>`<article class="card" tabindex="0" data-i="${i}">
   <div class="frame">${frame(p,false)}</div>
   <div class="card-body"><p class="label">${e(p.tag)}</p><h3>${e(p.title)}</h3><p class="sum">${e(p.summary)}</p>${chips(p)}
-  <div class="card-foot"><button class="btn" type="button">${p.video?"Voir la démo":"Voir le tableau de bord"}</button></div></div></article>`).join("");
+  <div class="card-foot"><button class="btn" type="button">${p.video?"Voir la démo":"Voir le tableau de bord"}</button><a class="open dataset-link" href="https://docs.google.com/spreadsheets/d/1ICKNVgKEbnzxTTxSkU53WE9DvyM8l0JDd1lA7zn1yYQ/edit?usp=drive_link" target="_blank" rel="noopener">Voir les données source ↗</a></div></div></article>`).join("");
 function sheet(p){return `<div class="sheet" role="dialog" aria-modal="true" aria-labelledby="viewer-title">
   <div class="sheet-head"><div><p class="label">${e(p.tag)}</p><h3 id="viewer-title">${e(p.title)}</h3></div><button class="close" type="button" id="viewer-close">Fermer</button></div>
-  <div class="frame">${frame(p,true)}</div>
+  <div class="frame">${frame(p,true)}</div><div class="project-resources"><a class="open dataset-link" href="https://docs.google.com/spreadsheets/d/1ICKNVgKEbnzxTTxSkU53WE9DvyM8l0JDd1lA7zn1yYQ/edit?usp=drive_link" target="_blank" rel="noopener">Voir les données source ↗</a></div>
   <div class="notes"><div><p>${e(p.summary)}</p>${p.liveUrl||p.embedUrl?`<a class="open" href="${e(p.liveUrl||p.embedUrl)}" target="_blank" rel="noopener">${p.video?"Voir sur YouTube ↗":"Ouvrir en plein écran ↗"}</a>`:""}</div>
   <div><dl>${p.problem?`<div><dt>Problématique</dt><dd>${e(p.problem)}</dd></div>`:""}${p.approach?`<div><dt>Ma réalisation</dt><dd>${e(p.approach)}</dd></div>`:""}</dl></div>
   <div>${chips(p)}</div></div>
@@ -42,7 +42,7 @@ const viewer=document.getElementById("viewer");let last=null;
 function openP(i){last=document.activeElement;viewer.innerHTML=sheet(PROJECTS[i]);viewer.hidden=false;Array.from(document.body.children).forEach(el=>{if(el!==viewer&&el.tagName!=="SCRIPT")el.inert=true;});document.body.classList.add("locked");document.getElementById("viewer-close").focus();}
 function closeP(){viewer.hidden=true;Array.from(document.body.children).forEach(el=>el.inert=false);viewer.innerHTML="";document.body.classList.remove("locked");if(last)last.focus();}
 const list=document.getElementById("projects");
-list.addEventListener("click",ev=>{const c=ev.target.closest(".card");if(c)openP(+c.dataset.i);});
+list.addEventListener("click",ev=>{if(ev.target.closest("a"))return;const c=ev.target.closest(".card");if(c)openP(+c.dataset.i);});
 list.addEventListener("keydown",ev=>{const c=ev.target.closest(".card");if(c&&(ev.key==="Enter"||ev.key===" ")&&ev.target===c){ev.preventDefault();openP(+c.dataset.i);}});
 viewer.addEventListener("click",ev=>{if(ev.target===viewer||ev.target.id==="viewer-close")closeP();});
 document.addEventListener("keydown",ev=>{if(ev.key==="Tab"&&!viewer.hidden){const items=[...viewer.querySelectorAll('button,a[href],iframe,[tabindex="0"]')];const first=items[0],end=items[items.length-1];if(ev.shiftKey&&document.activeElement===first){ev.preventDefault();end.focus();}else if(!ev.shiftKey&&document.activeElement===end){ev.preventDefault();first.focus();}}if(ev.key==="Escape"&&!viewer.hidden)closeP();});
