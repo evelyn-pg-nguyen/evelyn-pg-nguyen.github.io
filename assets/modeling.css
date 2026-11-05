@@ -1,0 +1,9 @@
+/* Case study covers use typography rather than illustrative financial data. */
+.model-cover{display:flex;flex-direction:column;justify-content:center;align-self:stretch;gap:18px;min-height:320px;padding:clamp(24px,3.2vw,42px);border-radius:4px;background:var(--surface);color:var(--ink)}
+.model-cover .label{margin:0}.model-cover>strong{font:400 clamp(30px,3.3vw,46px)/1.15 var(--f-display);max-width:13ch}
+.model-scale{display:flex;flex-wrap:wrap;align-items:baseline;gap:5px 12px;padding-top:10px}.model-scale>span{font:400 clamp(28px,3vw,40px)/1.2 var(--f-display)}.model-scale small{font-size:var(--fs-meta);color:var(--muted)}
+.model-cover-note{border-top:1px solid var(--line);padding-top:16px;margin:0;font-size:var(--fs-meta);color:var(--accent)}
+.model-meta{font-size:var(--fs-meta);color:var(--accent);margin:0 0 18px}
+.model-facts{margin:0}.model-facts>div+div{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}.model-facts dt{font-size:var(--fs-meta);color:var(--accent);margin:0 0 4px}.model-facts dd{margin:0;color:var(--ink)}
+.model-dialog .case-resources ul{margin-bottom:0}.model-dialog .case-resources h3{margin-bottom:18px}
+@media(max-width:760px){.model-cover{min-height:260px;gap:14px}.model-cover>strong{max-width:18ch}}
